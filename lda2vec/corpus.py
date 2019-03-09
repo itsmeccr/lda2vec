@@ -545,7 +545,7 @@ class Corpus():
         keys_raw = model.vocab.keys()
         keys = [s.encode('ascii', 'ignore') for s in keys_raw]
         lens = [len(s) for s in model.vocab.keys()]
-        choices = np.array(keys, dtype='S')
+        choices = np.array(keys, dtype='U')
         lengths = np.array(lens, dtype='int32')
         s, f = 0, 0
         rep0 = lambda w: w
