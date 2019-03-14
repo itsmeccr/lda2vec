@@ -121,7 +121,7 @@ for epoch in range(200):
         rate = batchsize / dt
         logs = dict(loss=float(l), epoch=epoch, j=j,
                     prior=float(prior.data), rate=rate)
-        if j % 100 == 0 and j > 100:
+        if j % 1000 == 0 and j > 100:
             print(msg.format(**logs))
         j += 1
     serializers.save_hdf5("lda2vec.hdf5", model)
